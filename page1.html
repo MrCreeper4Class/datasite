@@ -1,0 +1,41 @@
+data:text/html,<html>
+<head>
+  <style>
+    body {
+      margin-left: 30px;
+      margin-right: 30px;
+      background: linear-gradient(90deg, blue, white, green);
+   }
+    .center {
+      text-align: center;
+    }
+    .boxed {
+      border: 1px solid black;
+      margin: 10px;
+      padding: 10px;
+    }
+    .move {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+<script>
+function replace(value) {
+  fetch(value)
+    .then(response => response.text())
+    .then(data => {
+      document.open();
+      document.write(data);
+      document.close();
+    });
+}
+</script>
+  <h1 class="center">Page 2</h1>
+  <p class="move">This is some filler text</p>
+  <p class="move">I dident know what else to put here lol</p>
+  <button onclick=replace(“https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/mainsite.html”) class="move">Go to main page</button><p></p>
+  <button onclick=replace("") class="move">Nothing for now</button><p></p>
+  <button onclick=replace("") class="move">Nothing for now</button><p></p>
+</body>
+</html>

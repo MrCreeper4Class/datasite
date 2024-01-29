@@ -6,7 +6,6 @@
       margin-right: 30px;
       background: linear-gradient(90deg, red, white, blue);
    }
-
     .center {
       text-align: center;
     }
@@ -24,17 +23,18 @@
 <!-- use class="center" to center an element, use class="boxed" to box an element (use in <div>), use class="move" to move element right 20px -->
 <script>
   function replace(value) {
-    alert("Button " + value + " pressed");
-    if (value == 1) {
-      alert('Button 1 script')
-    }
-    if (value == 2) {
-      alert('Button 2 script')
-    }
-    if (value == 3) {
-      alert('Button 3 script')
-    }
+fetch(value)
+  .then(response => response.text())
+  .then(data => {
+    document.open();
+    document.write(data);
+    document.close();
+  });
+
+
   }
+
+
 </script>
   <h1 class="center">Test Site</h1>
   <p class="center">This 'site' was made by me</p>
@@ -47,7 +47,7 @@
 <p></p>
   <button onclick=eval(prompt("What")) class="move">This runs js</button>
 <p></p>
-  <button onclick=replace(1) class="move">Button 1</button><p></p>
+  <button onclick=replace(“https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/mainsite.html”) class="move">Button 1</button><p></p>
   <button onclick=replace(2) class="move">Button 2</button><p></p>
   <button onclick=replace(3) class="move">Button 3</button><p></p>
 </body>

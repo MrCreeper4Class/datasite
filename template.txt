@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin-left: 30px;
+            margin-right: 30px;
+            background: linear-gradient(90deg, red, green, blue);
+        }
+        .center {
+            text-align: center;
+        }
+        .boxed {
+            border: 1px solid white;
+            margin: 10px;
+            padding: 10px;
+        }
+        .move {
+            margin-left: 20px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .topnav a {
+            float: left;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+            transition-duration: 200ms;
+        }
+        .topnav a:hover,
+        .topnav:not(:has(a:hover)) :is(:not(:has(:target)) .active, :target) {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#" onclick=replace('https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/mainsite.html') class="active">Home</a>
+        <a href="#" onclick=replace('https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/page2.html')>Page2 </a>
+        <a href="#" onclick=replace('contact',false)>Contact</a>
+        <a href="#" onclick=replace('about',false)>About </a>
+    </div>
+    <script>
+        function replace(url) {
+            const rawURL = url;
+            fetch(rawURL).then(response => response.text()).then(htmlContent => {
+                // Display the HTML content on the page
+                document.open();
+                document.write(htmlContent);
+                document.close();
+            }).catch(error => {
+                alert('Error fetching content:', error);
+            });
+        }
+    </script>
+    <!-- PASTE THE HTML CODE HERE THIS IS WHERE THE CODE NEEDS TO BE-->
+    <!-- PASTE THE HTML CODE HERE THIS IS WHERE THE CODE NEEDS TO BE-->
+    <!-- PASTE THE HTML CODE HERE THIS IS WHERE THE CODE NEEDS TO BE-->
+    <!-- Also remove this because it is not needed-->
+</body>
+</html>

@@ -45,7 +45,7 @@
 <body>
     <div class="topnav">
         <a href="#" onclick=replace('https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/mainsite.html') class="active">Home</a>
-        <a href="#" onclick=replace('https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/page2.html')>News</a>
+        <a href="#" onclick=replace('https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/page2.html')>Page2</a>
         <a href="#" onclick=replace('contact',false)>Contact</a>
         <a href="#" onclick=replace('about',false)>About </a>
     </div>
@@ -53,8 +53,7 @@
         function replace(url) {
             const rawURL = url;
             fetch(rawURL).then(response => response.text()).then(htmlContent => {
-                // Display the HTML content on the pagea
-                alert();
+                // Display the HTML content on the page
                 document.open();
                 document.write(htmlContent);
                 document.close();

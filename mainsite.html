@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin-left: 30px;
+            margin-right: 30px;
+            background: linear-gradient(90deg, red, white, blue);
+        }
+        .center {
+            text-align: center;
+        }
+        .boxed {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+        .move {
+            margin-left: 20px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .topnav a {
+            float: left;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            color: white;
+            transition-duration: 200ms;
+        }
+        .topnav a:hover,
+        .topnav:not(:has(a:hover)) :is(:not(:has(:target)) .active, :target) {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="#" onclick=replace('home',false) class="active">Home</a>
+        <a href="#" onclick=replace('news',false)>News</a>
+        <a href="#" onclick=replace('contact',false)>Contact</a>
+        <a href="#" onclick=replace('about',false)>About </a>
+    </div>
+    <script>
+        function replace(txt, run) {
+            alert("Opening " + txt);
+            if (run) {
+                document.open();
+                document.write(txt);
+                document.close();
+            }
+        }
+    </script>
+    <h1 class="center">Test Site</h1>
+    <p class="center">This 'site' was made by me</p>
+    <div class="boxed">
+        <h1>This is boxed</h1>
+        <p>This is where the main page will be</p>
+    </div>
+</body>
+</html>

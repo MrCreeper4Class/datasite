@@ -43,19 +43,24 @@
 </head>
 <body>
     <div class="topnav">
-        <a href="#" onclick=replace('home',false) class="active">Home</a>
-        <a href="#" onclick=replace('news',false)>News</a>
-        <a href="#" onclick=replace('contact',false)>Contact</a>
-        <a href="#" onclick=replace('about',false)>About </a>
+        <a href="#" onclick=replace('https://raw.githubusercontent.com/MrCreeper4Class/datasite/main/mainsite.html') class="active">Home</a>
+        <a href="#" onclick=replace('news')>News</a>
+        <a href="#" onclick=replace('contact')>Contact</a>
+        <a href="#" onclick=replace('about')>About </a>
     </div>
+    <div id="content"></div>
     <script>
-        function replace(txt, run) {
-            alert("Opening " + txt);
-            if (run) {
+        function replace(url) {
+            const rawURL = url;
+            fetch(rawURL).then(response => response.text()).then(htmlContent => {
+                // Display the HTML content on the pagea
+                alert();
                 document.open();
-                document.write(txt);
+                document.write(htmlContent);
                 document.close();
-            }
+            }).catch(error => {
+                alert('Error fetching content:', error);
+            });
         }
     </script>
     <h1 class="center">Test Site</h1>
